@@ -5,4 +5,4 @@ After clicking stop the app will stop running. It is very simple to use and easy
 
 IMAGES:
 
-![IMG](app%2Fsrc%2Fmain%2Fres%2Fraw%2Fphysical%20device.jpeg)
+![physical _device.jpeg](app%2Fsrc%2Fmain%2Fres%2Fraw%2Fphysical%20_device.jpeg)
