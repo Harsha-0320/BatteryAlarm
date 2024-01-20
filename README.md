@@ -4,4 +4,5 @@ The only condition for the app is that it has to be kept running in the backgrou
 After clicking stop the app will stop running. It is very simple to use and easy to understand.
 
 IMAGES
-<img width="154" alt="IMG" src="C:\Users\Harsha\Desktop\BatteryAlarmProject\images\physical device.jpeg"/>
+
+<img width="154" alt="IMG" src="C:\Users\Harsha\Desktop\BatteryAlarmProject\images\physical device.jpeg">
