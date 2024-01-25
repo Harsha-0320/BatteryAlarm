@@ -107,24 +107,21 @@ public class MainActivity extends AppCompatActivity {
 
             battlevel.setText(String.valueOf(intent.getIntExtra("level", 0)) + "%");
 
-            int selectedBatteryLevel = batteryLevelSeekBar.getProgress();
-
-            // Set your desired high battery level threshold
-            //int threshold = 80;
+            int selectedBatteryLevel = batteryLevelSeekBar.getProgress();           //battery level taken as input from seekbar
 
             boolean isCharging = status == BatteryManager.BATTERY_STATUS_CHARGING
                     || status == BatteryManager.BATTERY_STATUS_FULL;
 
+            //Only if Charging is true the alarm would start
             if (isCharging) {
                 // Get the remaining time to reach 100% charge
                 int plugged = intent.getIntExtra(BatteryManager.EXTRA_PLUGGED, -1);
 
-                if (plugged == BatteryManager.BATTERY_PLUGGED_AC || plugged == BatteryManager.BATTERY_PLUGGED_USB) {
+                if (plugged == BatteryManager.BATTERY_PLUGGED_AC || plugged == BatteryManager.BATTERY_PLUGGED_USB || plugged==BatteryManager.BATTERY_PLUGGED_WIRELESS) {
                     // The device is charging via AC or USB
                     if (batteryLevel > selectedBatteryLevel) {
 
                         playAlarm();
-                        //ringtone.play();
                         startVibration();
                         showHighBatteryAlert();
                     }
@@ -138,7 +135,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
     /*public void stopButton(View view){
         //stopAlarm();
         mediaPlayer.stop();
@@ -146,6 +142,7 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),"Alarm Stopped",Toast.LENGTH_SHORT).show();
     }*/
 
+    //method for showing high battery level alert box
     public void showHighBatteryAlert() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("High Battery Alert")
@@ -162,10 +159,11 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
+    //method for showing low level battery alarm
     public void showLowBatteryAlert(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Low Battery Alert")
-                .setMessage("Your battery level is less than 15. Please plug the charger.")
+        builder.setTitle("Low Battery Alert")                                                //Title of alert box
+                .setMessage("Your battery level is less than 15. Please plug the charger.")  //Message on the alert box
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         //mediaPlayer.stop();
@@ -179,6 +177,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    //method to start alarm media player
     private void playAlarm() {
         // You can replace the sound file with your own alarm sound
         //mediaPlayer.setLooping(true);
@@ -186,6 +185,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //method after clicking stop button on alert box to stop alarm
     private void stopAlarm() {
         // Stop the MediaPlayer
         if (mediaPlayer != null && mediaPlayer.isPlaying()) {
@@ -194,7 +194,6 @@ public class MainActivity extends AppCompatActivity {
                 mediaPlayer.release();
                 mediaPlayer = null;
         }
-
         // You can also finish the activity if you want
         //finish();
     }
@@ -338,6 +337,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case BatteryManager.BATTERY_PLUGGED_WIRELESS:
                 chargingSource.setText("Wireless");
+                break;
+            case BatteryManager.BATTERY_PLUGGED_DOCK:
+                chargingSource.setText("Charging Dock");
                 break;
             default:
                 chargingSource.setText("Null");
