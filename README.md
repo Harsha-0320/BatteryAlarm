@@ -40,7 +40,7 @@ The Battery Alarm App is an Android Mobile Application, alerting the user about 
 
 Application Interface after installing in physical device.
 
-![physical_device.jpeg](app%2Fsrc%2Fmain%2Fres%2Fdrawable%2Fphysical_device.jpeg))
+![physical_device.jpeg](app%2Fsrc%2Fmain%2Fres%2Fdrawable%2Fphysical_device.jpeg)
 
 ## Contributing
 Contributions to the project are welcome. Feel free to open issues or submit pull requests.
