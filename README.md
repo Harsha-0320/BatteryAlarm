@@ -28,7 +28,7 @@ Features-
 
 5. **Stopping the Alarm:**
     - The user can manually stop the alarm by pressing the "STOP" button in the alert dialog.
-
+   
 6. **Automatic Termination:**
     - After the user stops the alarm, the app will automatically terminate from the background.
 
