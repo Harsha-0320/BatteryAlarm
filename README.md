@@ -44,3 +44,6 @@ Application Interface after installing in physical device.
 
 ## Contributing
 Contributions to the project are welcome. Feel free to open issues or submit pull requests.
+
+## Licence
+ text[GNU](LICENCE)
