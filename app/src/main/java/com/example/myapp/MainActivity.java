@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
                 // Get the remaining time to reach 100% charge
                 int plugged = intent.getIntExtra(BatteryManager.EXTRA_PLUGGED, -1);
 
-                if (plugged == BatteryManager.BATTERY_PLUGGED_AC || plugged == BatteryManager.BATTERY_PLUGGED_USB || plugged==BatteryManager.BATTERY_PLUGGED_WIRELESS) {
+                if (plugged == BatteryManager.BATTERY_PLUGGED_AC || plugged == BatteryManager.BATTERY_PLUGGED_USB || plugged==BatteryManager.BATTERY_PLUGGED_WIRELESS || plugged==BatteryManager.BATTERY_PLUGGED_DOCK) {
                     // The device is charging via AC or USB
                     if (batteryLevel > selectedBatteryLevel) {
 
