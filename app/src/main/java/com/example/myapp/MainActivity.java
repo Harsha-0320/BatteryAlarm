@@ -89,8 +89,9 @@ public class MainActivity extends AppCompatActivity {
                 // Not needed for this example
             }
         });
-
     }
+
+
 
     private void registerBatteryReceiver() {
         IntentFilter filter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
@@ -134,13 +135,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
-    /*public void stopButton(View view){
-        //stopAlarm();
-        mediaPlayer.stop();
-        stopVibration();
-        Toast.makeText(getApplicationContext(),"Alarm Stopped",Toast.LENGTH_SHORT).show();
-    }*/
 
     //method for showing high battery level alert box
     public void showHighBatteryAlert() {
